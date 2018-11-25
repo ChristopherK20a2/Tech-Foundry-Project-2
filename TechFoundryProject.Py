@@ -1,64 +1,37 @@
-import random
+play_again = True
+while play_again:
+
+    print ("Welcome to 'The Wallmart difference adlib!'")
+
+    #vARIABLEs FOR THE STORY
+    verb1 = input("Give me a verb:")
+    verb2 = input("Give me a verb ending in 'ing':")
+    verb3 = input("Give me a third verb:")
 
 
-def cnj_check(player, comp):
+    noun1 = input("Give me a plural noun:")
+    noun2 = input("Give me a second plural noun:")
+    noun3 = input("Give me a third plural noun:")
+    noun4 = input("Give me a fourth plural noun:")
+    noun5 = input("Give me a fifth plural noun:")
 
-    if player == "ninja" and comp == "cowboy":
-        return "You win!"
-    elif player == "cowboy" and comp == "bear":
-        return "You win!"
-    elif player == "bear" and comp == "ninja":
-        return "You win!"
-    elif player == comp:
-        return "Tie!"
-    else:
-        return "The computer always wins!"
+    number = input("Give me a number:")
 
-
-def comp_choice():
-
-    num = random.randrange(1, 4)
-
-    if num == 1:
-        return "cowboy"
-    elif num == 2:
-        return "bear"
-    else:
-        return "ninja"
+    adj1 = input("Give me an adjective:")
+    adj2 = input("Give me a second adjecive:")
+    adj3 = input("Give me a third adjective:")
+    adj4 = input("Give me a fourth adjective:")
+    adj5 = input("Give me a fifth adjective:")
 
 
-player_wins = 0
-comp_wins = 0
-total_games = 0
+    #Template for the story 
+    Story = ("Come " + (verb1) + " at WALMART, where you`ll receive " + (adj1) + " discounts on all of your favorite brand name " + (noun1) + ".Our " + (adj2) + " and " + (verb2) + " associates are there to " + (verb3) + " you " + (number) + " hours a day. Here you will find " + (adj3) +  " prices on the "+ (noun2) +" you need. "+ (noun3) +" for the moms, " + (noun4) + " for the kids and all the latest electronics for the family. So come on down to your "+ (adj4) +" "+ (adj5) + " WALMART where the " + (noun5) + " come first.	")   
 
+    print(Story) 
+#Loop for restarting the program
 
-while True:
-
-    player_input = (input("Pick cowboy, ninja, or bear(Ninja beats Cowboy, Cowboy beats Bear, Bear beats Ninja:\n")).lower()
-    flag = True
-
-    while flag:
-        if player_input == "cowboy":
-            flag = False
-        elif player_input == "ninja":
-            flag = False
-        elif player_input == "bear":
-            flag = False
-        else:
-            player_input = input("Please enter a valid input:\n")
-
-    comp_input = comp_choice()
-    print("The computer chose " + str(comp_input) + "!")
-    print(cnj_check(player_input, comp_input))
-
-    if str(cnj_check(player_input, comp_input)) == "You win!":
-        player_wins += 1
-        total_games += 1
-    elif str(cnj_check(player_input, comp_input)) == "The computer wins!":
-        comp_wins += 1
-        total_games += 1
-    else:
-        total_games += 1
-
-    print("You won " + str(player_wins) + " game(s) out of " + str(total_games) + ".\n")
-    flag = True
+play_again_response = input("Play this program again")
+if play_again_response == "y" or play_again_response == "Y":
+  play_again = True
+else:
+  play_again = False
